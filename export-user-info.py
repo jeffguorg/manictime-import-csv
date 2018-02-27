@@ -8,7 +8,7 @@ def parseargs():
     parser.add_argument("-p", "--password")
     parser.add_argument("--log-level", choices=["debug", "info", "warn", "error", "fatal"], default="info")
     parser.add_argument("filename", nargs=1)
-    parser.add_argument("format", nargs="?", default="{userId},{username},{displayName},{activeStatus},{activationLink}")
+    parser.add_argument("format", nargs=argparse.REMAINDER, default=["{userId}","{username}","{displayName}","{activeStatus}","{activationLink}"])
     return parser.parse_args()
 
 
